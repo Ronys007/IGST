@@ -1,0 +1,37 @@
+{{title}}<br><br>
+
+<table>
+    <tr>
+        <th>Sr No</th>
+        <th>Name</th>
+        <th>Checkbox</th>
+        <th>Tablename</th>
+        <th>Age</th>
+        <th>Percentage</th>
+        <th>Options</th>
+    </tr>
+    {{#each userList}}
+    <tr style="text-align: center;">
+        <td>{{this.id}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.checkbox}}</td>
+        <td>{{this.tablename}}</td>
+        <td>{{this.age}}</td>
+        <td>{{this.percentage}}</td>
+        <td><button style="background-color:aqua;"><a href="/edit/{{this.id}}" style="text-decoration:none;color:rgb(27, 22, 22);">Edit</a></button>
+            <button style="background-color:red;"><a href="/delete/{{this.id}}" style="text-decoration:none;color:rgb(255, 255, 255);background-color:red;">Delete</a></button>
+
+        </td>
+        </tr>
+    {{/each}}
+</table>
+
+<br><br>
+<button style="background-color:rgb(52, 139, 252);"><a href="formm" style="text-decoration:none;color:rgb(255, 255, 255);">Formm Page</a></button>
+{{#if serverSuccess}}
+<p>{{serverSuccess}}</p>
+{{/if}}
+
+{{#if serverError}}
+<p>{{serverError}}</p>
+{{/if}}

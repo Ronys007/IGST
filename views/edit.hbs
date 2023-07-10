@@ -1,0 +1,22 @@
+<h1>Edit Form</h1>
+
+<form method="POST" >
+<label name="name">Name</label>
+<input type="text" name="name" value="{{user.name}}"><br><br>
+<label name="checkbox">Checkox</label>
+<input type="checkbox"  name="checkbox" value="check{{user.checkbox}}"><br><br>
+<label name="tablename">Table Name</label>
+<input type="text"  name="tablename" value="{{user.tablename}}"><br><br>
+<label name="age">Age</label>
+<input type="number" id="age" name="age" value="{{user.age}}"><br><br>
+<label name="percentage">Percentage</label>
+<input type="number" id="percentage" readonly name="percentage" value="{{user.percentage}}"><br><br>
+<button type="submit">Submit</button>
+</form>
+<script>
+    var d = document.getElementById('age');
+    var e = document.getElementById('percentage');
+    d.oninput = function () {
+      e.value = 0.15*d.value; // Set the value of e to the value of d
+    };
+  </script>
